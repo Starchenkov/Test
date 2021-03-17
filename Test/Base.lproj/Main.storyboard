@@ -24,7 +24,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="35"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9W6-po-A1W">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9W6-po-A1W">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="35"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                             <nil key="textColor"/>
@@ -52,7 +52,7 @@
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="n03-Qc-Xar">
                                             <rect key="frame" x="0.0" y="0.0" width="414" height="320"/>
                                             <subviews>
-                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="328-Gb-D0L">
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="328-Gb-D0L">
                                                     <rect key="frame" x="0.0" y="0.0" width="414" height="20.5"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
@@ -90,12 +90,11 @@
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="selectorCell" rowHeight="70" id="6W7-ts-qy9" customClass="selectorTableViewCell" customModule="Test" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="383" width="414" height="70"/>
                                 <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6W7-ts-qy9" id="iNd-E8-RWw">
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="6W7-ts-qy9" translatesAutoresizingMaskIntoConstraints="NO" id="iNd-E8-RWw">
                                     <rect key="frame" x="0.0" y="0.0" width="414" height="70"/>
-                                    <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sxt-Ad-xpO">
-                                            <rect key="frame" x="141.5" y="19.5" width="131" height="32"/>
+                                        <segmentedControl opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="top" apportionsSegmentWidthsByContent="YES" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="Sxt-Ad-xpO">
+                                            <rect key="frame" x="20" y="19" width="374" height="33"/>
                                             <segments>
                                                 <segment title="First"/>
                                                 <segment title="Second"/>
@@ -103,12 +102,18 @@
                                         </segmentedControl>
                                     </subviews>
                                     <constraints>
-                                        <constraint firstItem="Sxt-Ad-xpO" firstAttribute="top" secondItem="iNd-E8-RWw" secondAttribute="topMargin" constant="8.5" id="V44-gb-0oe"/>
-                                        <constraint firstItem="Sxt-Ad-xpO" firstAttribute="centerX" secondItem="iNd-E8-RWw" secondAttribute="centerX" id="VDB-8T-nvB"/>
-                                        <constraint firstItem="Sxt-Ad-xpO" firstAttribute="centerY" secondItem="iNd-E8-RWw" secondAttribute="centerY" id="emN-UG-ZQp"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="Sxt-Ad-xpO" secondAttribute="bottom" constant="8.5" id="sMW-gp-y7J"/>
+                                        <constraint firstItem="Sxt-Ad-xpO" firstAttribute="top" secondItem="iNd-E8-RWw" secondAttribute="topMargin" constant="8" id="1X0-WO-i3v"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="Sxt-Ad-xpO" secondAttribute="trailing" id="A2I-bq-nTL"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="Sxt-Ad-xpO" secondAttribute="bottom" constant="8" id="P39-0F-APR"/>
+                                        <constraint firstItem="Sxt-Ad-xpO" firstAttribute="leading" secondItem="iNd-E8-RWw" secondAttribute="leadingMargin" id="r6r-EM-FWD"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <constraints>
+                                    <constraint firstAttribute="bottom" secondItem="iNd-E8-RWw" secondAttribute="bottom" id="Dcs-Pe-Ktj"/>
+                                    <constraint firstItem="iNd-E8-RWw" firstAttribute="top" secondItem="6W7-ts-qy9" secondAttribute="top" id="L3l-Ai-uJN"/>
+                                    <constraint firstAttribute="trailing" secondItem="iNd-E8-RWw" secondAttribute="trailing" id="c2W-pY-fXn"/>
+                                    <constraint firstItem="iNd-E8-RWw" firstAttribute="leading" secondItem="6W7-ts-qy9" secondAttribute="leading" id="vXR-Sf-4Ry"/>
+                                </constraints>
                                 <connections>
                                     <outlet property="selector" destination="Sxt-Ad-xpO" id="fJ4-SS-e2F"/>
                                 </connections>

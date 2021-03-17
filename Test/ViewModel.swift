@@ -8,7 +8,7 @@
 import Foundation
 import UIKit
 
-let urlJson = "https://pryaniky.com/static/json/sample.json"
+let urlJson = "https://chat.pryaniky.com/json/data-custom-order-much-more-items-in-data.json"
 
 class ViewModel: NSObject {
     
@@ -36,31 +36,37 @@ class ViewModel: NSObject {
         
         switch typeCell {
         case "hz":
-            for element in elementsArray {
+            for index in 0..<elementsArray.count {
+                let element = elementsArray[index]
                 if element.name == "hz" {
                     let newCell = cell as! hzTableViewCell
                     newCell.label.text = element.data.text
+                    elementsArray.remove(at: index)
                     return newCell
                 }
             }
         case "selector":
-            for element in elementsArray {
+            for index in 0..<elementsArray.count {
+                let element = elementsArray[index]
                 if element.name == "selector" {
                     let newCell = cell as! selectorTableViewCell
                     newCell.selector.removeAllSegments()
                     if let variants = element.data.variants {
-                        for variant in variants {
+                        for index in 0..<variants.count {
+                            let variant = variants[index]
                             newCell.selector.insertSegment(withTitle: variant.text, at: variant.id, animated: false)
-                        }
-                        if let selectedId = element.data.selectedId {
-                            newCell.selector.selectedSegmentIndex = selectedId - 1
+                            if variant.id == element.data.selectedId {
+                                newCell.selector.selectedSegmentIndex = index
+                            }
                         }
                     }
+                    elementsArray.remove(at: index)
                     return newCell
                 }
             }
         case "picture":
-            for element in elementsArray {
+            for index in 0..<elementsArray.count {
+                let element = elementsArray[index]
                 if element.name == "picture" {
                     let newCell = cell as! pictureTableViewCell
                     newCell.label.text = element.data.text
@@ -69,6 +75,7 @@ class ViewModel: NSObject {
                             newCell.picture.image = image
                         }
                     }
+                    elementsArray.remove(at: index)
                     return newCell
                 }
             }
@@ -79,7 +86,7 @@ class ViewModel: NSObject {
     }
     
     
-        
-
+    
+    
     
 }

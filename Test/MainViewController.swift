@@ -60,7 +60,7 @@ class MainViewController: UITableViewController {
     }
     
     @objc func selectorChanged(_ sender: UISegmentedControl) {
-        let alert = UIAlertController(title: "Selector was changed", message: "CurrentID \(sender.selectedSegmentIndex + 1)", preferredStyle: .alert)
+        let alert = UIAlertController(title: "Selector was changed", message: "CurrentID \(sender.selectedSegmentIndex). Value = \(String(describing: sender.titleForSegment(at: sender.selectedSegmentIndex) ?? ""))", preferredStyle: .alert)
         let action = UIAlertAction(title: "OK", style: .default, handler: nil)
         alert.addAction(action)
         
